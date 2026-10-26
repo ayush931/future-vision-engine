@@ -1,0 +1,11 @@
+build/
+build-*/
+inspection_results/
+models/
+.venv/
+.git/
+.DS_Store
+*.mp4
+*.mov
+*.avi
+*.mkv

@@ -1,0 +1,13 @@
+# docker compose run --rm inspect                       -> inspects ./video.mp4 into ./inspection_results
+# docker compose run --rm inspect --video /work/other.mp4 --side-by-side
+services:
+  inspect:
+    build:
+      context: .
+      args:
+        WITH_MODEL: "1"
+    image: future-vision-engine:latest
+    volumes:
+      - ./:/work
+    working_dir: /work
+    command: ["--video", "/work/video.mp4", "--output-dir", "/work/inspection_results/docker", "--side-by-side", "--heatmap"]

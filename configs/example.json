@@ -1,0 +1,56 @@
+{
+  "fixture_name": "example_fixture",
+  "backend": "auto",
+  "segmentation": "auto",
+
+  "slots": [
+    { "slot_id": "SLOT_01", "type": "component", "bbox": [352, 92, 394, 120] },
+    { "slot_id": "SLOT_02", "type": "component", "bbox": [886, 92, 922, 118] }
+  ],
+  "detection_params": {
+    "board_hsv_lower": [10, 50, 70],
+    "board_hsv_upper": [30, 180, 220],
+    "missing_threshold": 0.40,
+    "margin_ratio": 0.15
+  },
+
+  "ignore_regions": [[1100, 560, 1280, 720]],
+
+  "alignment": {
+    "enabled": true,
+    "max_features": 1500,
+    "min_inliers": 20,
+    "max_shift_ratio": 0.25,
+    "max_rotation_deg": 15.0
+  },
+
+  "anomaly": {
+    "work_width": 640,
+    "sensitivity": 1.0,
+    "margin": 1.6,
+    "color_floor": 7.0,
+    "structure_floor": 0.14,
+    "dino_floor": 0.15,
+    "calibration_frames": 0,
+    "top_percent": 1.0,
+    "hybrid_cascade": 0.35
+  },
+
+  "dino": {
+    "model": "models/dinov2_ml.onnx",
+    "provider": "auto",
+    "short_edge": 448,
+    "search_radius": 2,
+    "threads": 0,
+    "shift_augment": true
+  },
+
+  "components": {
+    "shift_tolerance_px": 0,
+    "match_min_ncc": 0.55,
+    "search_ratio": 0.5,
+    "changed_min_fraction": 0.12,
+    "min_extra_area_ratio": 0.0006,
+    "context_pad_ratio": 0.25
+  }
+}
